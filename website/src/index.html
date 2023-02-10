@@ -1,0 +1,391 @@
+<!DOCTYPE html ng-app>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../src/css/mystyle.css" rel="stylesheet" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../src/images/favicon.ico" />
+    <title>Homepage | Braudit</title>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      .bodywrapper {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        top: 0;
+      }
+      .thebottom {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100px;
+      }
+      .custom-fonts {
+        font-family: "satoshi", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-[#1E1E1E] bodywrapper px-2 sm:px-6 lg:px-8 custom-fonts">
+      <nav class="bg-[#1E1E1E]">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="relative flex items-center text-center justify-between h-16"
+          >
+            <div class="flex items-center text-center px-2 lg:px-0">
+              <div
+                class="flex flex-shrink-0 cursor-pointer"
+                onclick="sendHome()"
+              >
+                <svg
+                  width="23"
+                  height="25"
+                  viewBox="0 0 23 25"
+                  fill="none"
+                  class="block lg:block h-8 w-auto px-3 py-2 bg-[#1A1A1A] rounded-md"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.2599 18.5481L16.3194 13.594C15.5254 12.7978 15.5254 11.4708 16.3194 10.6746L20.0248 6.95905C21.0834 5.89746 21.3481 4.482 20.8188 3.15501C20.2894 1.82802 19.0543 0.943359 17.5545 0.943359H4.49764C2.55675 0.943359 0.96875 2.53575 0.96875 4.482V20.9367C0.96875 22.883 2.55675 24.4753 4.49764 24.4753C4.85053 24.4753 5.73276 24.4753 6.79142 24.4753C10.4968 24.4753 17.3781 24.4753 18.7014 24.5638C18.7014 24.5638 18.7014 24.5638 18.7897 24.5638C20.2012 24.5638 21.4363 23.7676 22.0539 22.3522C22.5832 21.0252 22.3186 19.5212 21.2599 18.5481ZM3.79186 4.482C3.79186 4.12814 4.14475 3.77428 4.49764 3.77428H17.5545C17.9957 3.77428 18.1721 4.03967 18.1721 4.21661C18.2603 4.39354 18.3485 4.65894 17.9957 5.0128L14.2903 8.72838C13.4081 9.61304 12.8788 10.8516 12.8788 12.1786C12.8788 13.5055 13.4081 14.7441 14.2903 15.6287L19.2308 20.5828C19.4954 20.8482 19.4954 21.2021 19.4072 21.379C19.319 21.556 19.1425 21.8214 18.7897 21.8214C17.1134 21.8214 10.2321 21.8214 6.52676 21.7329C5.46809 21.7329 4.76231 21.7329 4.49764 21.7329C4.14475 21.7329 3.79186 21.379 3.79186 21.0252V4.482Z"
+                    fill="white"
+                  />
+                </svg>
+
+                <svg
+                  width="130"
+                  height="30"
+                  viewBox="0 0 130 30"
+                  fill="none"
+                  class="h-6 w-auto ml-3 mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.1926 6.92362C10.2813 6.92362 8.07569 7.80828 6.48769 9.5776V0.200195H0.929688V28.1555C2.07658 28.4209 3.04702 28.5978 3.92925 28.7748C4.81147 28.9517 5.69369 29.0401 6.48769 29.1286C7.28169 29.2171 7.98747 29.2171 8.69325 29.3055C9.39903 29.3055 10.0166 29.3055 10.6341 29.3055C14.2513 29.3055 17.0744 28.244 19.1035 26.2977C21.1326 24.3514 22.103 21.4321 22.103 17.7165C22.103 14.0894 21.309 11.3469 19.8093 9.66607C18.3095 7.80828 16.1039 6.92362 13.1926 6.92362ZM16.2804 21.609C16.0157 22.5821 15.6628 23.2899 15.2217 23.8206C14.7806 24.3514 14.163 24.7938 13.369 25.0592C12.575 25.3246 11.6928 25.413 10.6341 25.413C9.84014 25.413 9.13436 25.413 8.42859 25.3246C7.72281 25.2361 7.10525 25.1476 6.57592 25.0592V15.5933C6.57592 14.0894 7.01703 13.0278 7.98747 12.2316C8.95792 11.5239 10.193 11.17 11.6046 11.17C12.4868 11.17 13.2808 11.2585 13.8984 11.5239C14.5159 11.7893 15.0453 12.1431 15.4864 12.6739C15.9275 13.2047 16.1922 13.9124 16.3686 14.7971C16.545 15.6818 16.6333 16.7434 16.6333 18.0704C16.545 19.4858 16.4568 20.6359 16.2804 21.609Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M33.5722 8.25082C32.3371 8.87008 31.102 9.57781 29.9551 10.4625H29.6904L29.3376 7.36616H24.75V28.8634H30.308V13.9127C31.1902 13.3819 32.2489 12.9395 33.3958 12.4972C34.5427 12.0549 35.6896 11.7895 36.8365 11.701H38.7774V6.92383H37.0129C35.9542 7.18923 34.8073 7.54309 33.5722 8.25082Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M55.4484 8.78104C53.9486 7.63098 51.5666 7.01172 48.3906 7.01172C46.0086 7.01172 43.362 7.27712 40.3624 7.80791L40.7153 11.7889C41.9504 11.5235 43.0973 11.3466 44.2442 11.2581C45.3911 11.1696 46.4497 11.0812 47.4202 11.0812C48.3906 11.0812 49.1846 11.1696 49.8022 11.2581C50.4197 11.435 50.9491 11.612 51.302 11.9658C51.6549 12.3197 51.9195 12.6736 52.0077 13.2043C52.096 13.7351 52.1842 14.3544 52.1842 15.1506V15.8583L47.1555 16.2122C44.3324 16.3891 42.3033 17.0969 40.98 18.1585C39.6566 19.22 39.0391 20.9009 39.0391 23.0241C39.0391 24.9703 39.5684 26.3858 40.5388 27.4474C41.5975 28.509 43.0973 29.0398 45.0382 29.0398C47.5966 29.0398 50.0669 28.0667 52.3606 26.2089H52.7135L53.2429 28.8629H57.7422V14.2659C57.7422 11.7889 56.9482 9.9311 55.4484 8.78104ZM52.1842 23.2895C51.4784 23.8203 50.6844 24.2626 49.8022 24.528C48.92 24.8819 48.126 25.0588 47.332 25.0588C45.4793 25.0588 44.5971 24.1741 44.5971 22.4048C44.5971 21.3432 44.95 20.547 45.5675 20.1047C46.1851 19.6624 47.332 19.3085 48.92 19.22L52.2724 18.8662V23.2895H52.1842Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M74.5948 22.9358C73.5361 23.3782 72.3892 23.8205 71.2423 24.2628C70.0954 24.7052 69.0368 24.8821 68.0663 24.8821C67.0959 24.8821 66.3901 24.6167 65.949 24.0859C65.5079 23.5551 65.3314 22.7589 65.3314 21.5204V7.27734H59.7734V23.2897C59.7734 25.236 60.3028 26.6514 61.2732 27.713C62.2437 28.7746 63.7434 29.2169 65.6843 29.2169C66.5666 29.2169 67.2723 29.1285 67.9781 29.04C68.6839 28.9515 69.3897 28.7746 70.0072 28.5092C70.713 28.2438 71.4188 27.9784 72.2128 27.6246C73.0068 27.2707 73.889 26.8284 74.9477 26.2976H75.1241L75.477 28.8631H80.1528V7.27734H74.5948V22.9358Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M98.2426 7.18902C97.6251 7.10055 96.9193 7.10055 96.2135 7.01209C95.5077 6.92362 94.802 6.92362 94.008 6.92362C92.2435 6.92362 90.6555 7.18902 89.244 7.63135C87.8324 8.07368 86.5973 8.86988 85.6268 9.75454C84.6564 10.7277 83.8624 11.8777 83.3331 13.3816C82.8037 14.7971 82.5391 16.478 82.5391 18.4242C82.5391 22.1398 83.3331 24.8822 84.8328 26.5631C86.3326 28.3324 88.6264 29.2171 91.5377 29.2171C94.4491 29.2171 96.6546 28.244 98.0662 26.2092H98.3309L98.772 28.8632H103.624V0.200195H98.0662V7.18902H98.2426ZM98.2426 20.4589C98.2426 22.0513 97.8015 23.2014 96.8311 23.9976C95.8606 24.7938 94.7137 25.1476 93.214 25.1476C92.3317 25.1476 91.5377 25.0592 90.9202 24.7938C90.3026 24.5284 89.7733 24.1745 89.3322 23.5553C88.8911 23.0245 88.6264 22.3167 88.45 21.3436C88.2735 20.4589 88.1853 19.3973 88.1853 18.0704C88.1853 16.7434 88.2735 15.5933 88.5382 14.6202C88.7146 13.7355 89.0675 12.9393 89.5086 12.4085C89.9497 11.8777 90.5673 11.4354 91.2731 11.17C91.9789 10.9046 92.8611 10.8161 93.8315 10.8161C94.7137 10.8161 95.4195 10.8161 96.2135 10.9046C96.9193 10.9931 97.6251 11.0815 98.2426 11.17V20.4589Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M112.003 7.27734H106.445V28.7746H112.003V7.27734Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M127.349 24.9706C126.202 24.9706 125.32 24.7052 124.791 24.1744C124.261 23.6436 123.997 22.6705 123.997 21.4319V11.9661H129.819V7.27736H123.997V0.819336L119.674 1.35013L118.88 7.27736H114.469V11.9661H118.527V22.6705C118.527 24.7937 119.145 26.4745 120.291 27.5361C121.438 28.6862 123.203 29.217 125.497 29.217C126.291 29.217 126.996 29.1285 127.79 29.04C128.584 28.9516 129.29 28.7746 129.908 28.5977V24.4398C129.025 24.8821 128.143 24.9706 127.349 24.9706Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1 flex justify-end px-2 lg:ml-6 lg:justify-end">
+              <div class="ml-6">
+                <div class="flex space-x-4">
+                  <a
+                    onclick="sendInquiry()"
+                    class="hidden mt-0.5 cursor-pointer sm:block text-white hover:text-gray-300 px-3 py-2 rounded-md text-base font-medium"
+                    >About Braudit</a
+                  >
+                  <a
+                    onclick="sendQuery()"
+                    class="hidden sm:block cursor-pointer text-white hover:text-gray-300 px-6 py-2 border-2 border-[#1A1A1A] rounded-3xl text-base font-medium"
+                    >Join waitlist</a
+                  >
+                  <a
+                    onclick="sendInquiry()"
+                    class="block mt-1 sm:hidden cursor-pointer text-white hover:text-gray-300 px-6 py-2 text-base font-medium"
+                    >About us</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center">
+          <h2 class="text-lg mt-40 mb-6 tracking-tight text-[#999999]">
+            Welcome to Africa
+          </h2>
+
+          <div class="sm:block hidden lg:hidden">
+            <div class="flex justify-center items-center text-center">
+              <div class="swiper-button-prev-unique"></div>
+
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="output_post"></div>
+              </div>
+
+              <div class="swiper-button-next-unique"></div>
+            </div>
+          </div>
+
+          <div class="sm:hidden">
+            <div class="flex justify-center items-center text-center">
+              <div class="swiperwrap swiper mySwiper">
+                <div class="swiper-wrapper" id="output_post2"></div>
+              </div>
+            </div>
+            <div class="flex mt-8 justify-center items-center text-center">
+              <div class="swiper-button-prev-unique"></div>
+              <div class="swiper-button-next-unique"></div>
+            </div>
+          </div>
+
+          <div class="lg:block hidden">
+            <div class="flex justify-center items-center text-center">
+              <div class="swiper-button-prev-unique"></div>
+
+              <div class="swiperwrapp swiper mySwiper">
+                <div class="swiper-wrapper" id="output_post3"></div>
+              </div>
+
+              <div class="swiper-button-next-unique"></div>
+            </div>
+          </div>
+
+          <p
+            class="mt-3 max-w-2xl px-10 mx-auto text-xl text-[#999999] sm:mt-4"
+          >
+            We are taking African Talents to the rest of the world.
+          </p>
+
+          <div class="flex mt-10 justify-center">
+            <button
+              type="button"
+              onclick="sendQuery()"
+              class="bg-white py-2 px-10 border border-gray-300 rounded-3xl shadow-sm text-sm font-medium text-[#121212] focus:outline-none"
+            >
+              Know when we go live!
+            </button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div
+          class="flex bg-[#1E1E1E] thebottom pt-50 items-center text-center flex mt-3 justify-center"
+        >
+          <p class="text-lg text-[#999999] sm:text-sm">
+            Stay connected on
+            <span class="border-b-2 text-white">Linkedin</span>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      var outputHTML = "";
+      var posts = [
+        {
+          description:
+            "Where 40 million people compete for 3 million jobs every year.",
+        },
+        {
+          description:
+            "Where companies want the best people but won’t help people be the best.",
+        },
+        {
+          description:
+            "Where people get fired for not wishing co-workers happy birthday.",
+        },
+        {
+          description:
+            "Where recruitment platforms are mostly filled with fake jobs.",
+        },
+        {
+          description:
+            "Where people are paid $3 a day for labour with no breaks.",
+        },
+        {
+          description:
+            "Where career support and insights is almost non-existent.",
+        },
+        {
+          description:
+            "Where incompetent managers are recycled across companies.",
+        },
+        {
+          description:
+            "Where there’s no one to report to when employee rights are violated.",
+        },
+        {
+          description:
+            "Where job promotions can be as rare as ... well, you get the picture&#128554;.",
+        },
+      ];
+      for (var i = 0; i < posts.length; i++) {
+        outputHTML +=
+          "<swiper-slide > <p class='mt-3 mb-3 mx-auto lg:text-5xl text-3xl font-semibold text-white sm:mt-4'> " +
+          posts[i].description +
+          "</p> </swiper-slide>";
+      }
+      document.getElementById("output_post").innerHTML = outputHTML;
+    </script>
+    <script>
+      var outputHTML2 = "";
+      var posts2 = [
+        {
+          description:
+            "Where 40 million people compete for 3 million jobs every year.",
+        },
+        {
+          description:
+            "Where companies want the best people but won’t help people be the best.",
+        },
+        {
+          description:
+            "Where people get fired for not wishing co-workers happy birthday.",
+        },
+        {
+          description:
+            "Where recruitment platforms are mostly filled with fake jobs.",
+        },
+        {
+          description:
+            "Where people are paid $3 a day for labour with no breaks.",
+        },
+        {
+          description:
+            "Where career support and insights is almost non-existent.",
+        },
+        {
+          description:
+            "Where incompetent managers are recycled across companies.",
+        },
+        {
+          description:
+            "Where there’s no one to report to when employee rights are violated.",
+        },
+        {
+          description:
+            "Where job promotions can be as rare as ... well, you get the picture&#128554;.",
+        },
+      ];
+      for (var i = 0; i < posts2.length; i++) {
+        outputHTML2 +=
+          "<swiper-slide > <p class='mt-3 max-w-2xl mx-auto text-3xl font-medium text-white sm:mt-4'> " +
+          posts2[i].description +
+          "</p> </swiper-slide>";
+      }
+      document.getElementById("output_post2").innerHTML = outputHTML2;
+    </script>
+    <script>
+      var outputHTML3 = "";
+      var posts3 = [
+        {
+          description:
+            "Where 40 million people compete for 3 million jobs every year.",
+        },
+        {
+          description:
+            "Where companies want the best people but won’t help people be the best.",
+        },
+        {
+          description:
+            "Where people get fired for not wishing co-workers happy birthday.",
+        },
+        {
+          description:
+            "Where recruitment platforms are mostly filled with fake jobs.",
+        },
+        {
+          description:
+            "Where people are paid $3 a day for labour with no breaks.",
+        },
+        {
+          description:
+            "Where career support and insights is almost non-existent.",
+        },
+        {
+          description:
+            "Where incompetent managers are recycled across companies.",
+        },
+        {
+          description:
+            "Where there’s no one to report to when employee rights are violated.",
+        },
+        {
+          description:
+            "Where job promotions can be as rare as ... well, you get the picture&#128554;.",
+        },
+      ];
+      for (var i = 0; i < posts3.length; i++) {
+        outputHTML3 +=
+          "<swiper-slide > <p class='mt-3 mb-3 mx-auto lg:text-5xl text-4xl font-semibold text-white sm:mt-4'> " +
+          posts3[i].description +
+          "</p> </swiper-slide>";
+      }
+      document.getElementById("output_post3").innerHTML = outputHTML3;
+    </script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next-unique",
+          prevEl: ".swiper-button-prev-unique",
+        },
+        loop: "true",
+
+        autoplay: {
+          delay: 255555500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    </script>
+    <script>
+      function sendQuery() {
+        window.location = "waitlist.html";
+      }
+    </script>
+    <script>
+      function sendInquiry() {
+        window.location = "aboutus.html";
+      }
+    </script>
+    <script>
+      function sendHome() {
+        window.location = "index.html";
+      }
+    </script>
+  </body>
+</html>

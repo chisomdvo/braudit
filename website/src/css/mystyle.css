@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "satoshi";
+  src: url("/website/src/fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.swiperwrap.swiper {
+  width: 100% !important;
+}
+.swiperwrapp.swiper {
+  width: 70% !important;
+}
+.swiper-button-prev-unique {
+  background-image: url("./arrow-circle-left.png") !important;
+  width: 60px !important;
+  height: 60px !important;
+}
+.swiper-button-next-unique {
+  background-image: url("./arrow-circle-right.png") !important;
+  width: 60px !important;
+  height: 60px !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+  display: none;
+}
+.mySwiper,
+.swiper-wrapper {
+  width: 60% !important;
+}
+.swiper,
+.swiper-container {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+/*.thebottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+}*/
